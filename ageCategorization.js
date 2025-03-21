@@ -1,24 +1,35 @@
-// Declare a variable that holds the favorite number
-let theFavNumber = 9;
+// Ask the user for their age
+let userAge = prompt("Enter your age:");
 
-// Declare a variable to store the user's guess (initialize to null or any value not equal to theFavNumber)
-let userGuess = null;
+// Convert the user input from a string to a number
+userAge = Number(userAge);
 
-// Use a while loop that continues until the user guesses the favorite number correctly
-while (userGuess !== theFavNumber) {
-  // Ask the user for a guess using prompt(), and convert the input to a number
-  userGuess = Number(prompt("Guess the favorite number:"));
+// Declare a variable to hold the user's age category
+let category = "";
 
-  // Check if the guess is lower than the favorite number
-  if (userGuess < theFavNumber) {
-    console.log("Too low! Try again.");
-  }
-  // Check if the guess is higher than the favorite number
-  else if (userGuess > theFavNumber) {
-    console.log("Too high! Try again.");
-  }
-  // Otherwise, the guess must be correct
-  else {
-    console.log("Correct! You guessed the favorite number.");
-  }
+// Use a conditional (if-else) statement to categorize the user's age
+if (userAge < 5) {
+  // If age is under 5, the user is a Toddler
+  category = "Toddler";
+} else if (userAge >= 5 && userAge <= 12) {
+  // If age is between 5 and 12, the user is a Child
+  category = "Child";
+} else if (userAge >= 13 && userAge <= 19) {
+  // If age is between 13 and 19, the user is a Teenager
+  category = "Teenager";
+} else if (userAge >= 20 && userAge <= 25) {
+  // If age is between 20 and 25, the user is a Young Adult
+  category = "Young Adult";
+} else if (userAge >= 36 && userAge <= 60) {
+  // If age is between 36 and 60, the user is Middle Aged
+  category = "Middle Aged";
+} else if (userAge > 60) {
+  // If age is over 60, the user is a Senior
+  category = "Senior";
+} else {
+  // This covers ages 26–35, which aren't specified in the instructions
+  category = "No category specified (26-35 not included in instructions)";
 }
+
+// Log the final category to the console
+console.log("You are categorized as: " + category);
