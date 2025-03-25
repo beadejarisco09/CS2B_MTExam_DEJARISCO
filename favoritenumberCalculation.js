@@ -1,7 +1,5 @@
 // Declare a variable that holds the favorite number
-let theFavNumber = 9
-  
-  ;
+let theFavNumber = 9;
 
 // Declare a variable to store the user's guess (initialize to null or any value not equal to theFavNumber)
 let userGuess = null;
